@@ -1,0 +1,65 @@
+                                      23.12.2021
+                  Расчёт сравнения диаметров главных зеркал (ГЗ) телескопов.
+
+
+const areaDiff = (rad1, rad2) => {
+  let area1 = Math.PI * Math.pow(rad1, 2);
+  let area2 = Math.PI * Math.pow(rad2, 2);
+  let diff = Math.ceil((area1 / area2) * 100)/100;
+  let diam1 = rad1 * 2;
+  let diam2 = rad2 * 2;
+  return `Площадь ГЗ телескопа с ${rad1} в ${diff} раза больше площади ГЗ телескопа с ${rad2}, значит телескоп с диаметром ${diam1}мм соберет больше в ${diff} раза света, чем телескоп с диаметром ${diam2}мм.`
+}
+console.log(areaDiff(150, 75)); // нужно вводить радиусы
+
+_______ или
+
+const areaDiff = (rad1, rad2) => {
+  let area1 = Math.PI * rad1 * rad1;
+  let area2 = Math.PI * rad2 * rad2;
+  return `Телескоп 1 соберет в ${Math.floor((area1 / area2) * 100)/100} раз больше света, чем телескоп 2.`
+}
+
+console.log(areaDiff(110, 75))
+
+______________________________________________________________________
+
+этот вариан функции принимает в качестве аргумента диаметры ГЗ сравниваемых телескопов.
+
+
+
+const areaDiff = (diam1, diam2) => {
+  let rad1 =  diam1 / 2;
+  let rad2 =  diam2 / 2;
+  let area1 = Math.PI * Math.pow(rad1, 2);
+  let area2 = Math.PI * Math.pow(rad2, 2);
+  let diff = Math.ceil((area1 / area2) * 100)/100;
+
+  return `ГЗ телескопа с диаметром ${diam1} мм соберёт в ${diff} раза больше света, чем ГЗ телескопа диаметром ${diam2} мм.`
+}
+console.log(areaDiff(150, 100)); // нужно вводить диаметры ГЗ
+
+_____________________________________________ или 
+
+
+const areaDifference = (diam1, diam2) => {
+	let area1 = Math.PI * (Math.pow(diam1, 2)) / 4;
+  let area2 = Math.PI * (Math.pow(diam2, 2)) / 4;
+  return `Телескоп с диаметром ГЗ ${diam1} мм соберёт в ${Math.floor((area1 / area2) * 100) / 100} раза больше света, чем телескоп с диаметром ГЗ ${diam2} мм.`
+}
+
+
+console.log(areaDifference(250, 150)) // ввод диаметров ГЗ
+
+
+_____________________________________________ или
+
+
+
+const areaDifference = (diam1, diam2) => {
+	let area1 = Math.PI * (diam1 * diam1) / 4;
+  let area2 = Math.PI * (diam2 * diam2) / 4;
+  return `Телескоп с диаметром ГЗ ${diam1} мм соберёт в ${Math.floor((area1 / area2) * 100) / 100} раза больше света, чем телескоп с диаметром ГЗ ${diam2} мм.`
+}
+
+console.log(areaDifference(200, 150)) // ввод диаметров ГЗ
