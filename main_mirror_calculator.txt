@@ -1,6 +1,7 @@
                                       23.12.2021
-                  Расчёт сравнения диаметров главных зеркал (ГЗ) телескопов.
 
+		calculation for comparing the diameters of the main mirrors (MM) of telescopes							
+                 
 
 const areaDiff = (rad1, rad2) => {
   let area1 = Math.PI * Math.pow(rad1, 2);
@@ -8,11 +9,11 @@ const areaDiff = (rad1, rad2) => {
   let diff = Math.ceil((area1 / area2) * 100)/100;
   let diam1 = rad1 * 2;
   let diam2 = rad2 * 2;
-  return `Площадь ГЗ телескопа с ${rad1} в ${diff} раза больше площади ГЗ телескопа с ${rad2}, значит телескоп с диаметром ${diam1}мм соберет больше в ${diff} раза света, чем телескоп с диаметром ${diam2}мм.`
+  return `Square of MM of the telescope ${rad1}  ${diff} times larger than square of MM of telescope ${rad2}, therefore telescope ${diam1}мм collects ${diff} times more light, than telescope ${diam2}мм.`
 }
-console.log(areaDiff(150, 75)); // нужно вводить радиусы
+console.log(areaDiff(150, 75)); // should radii input
 
-_______ или
+_______ or
 
 const areaDiff = (rad1, rad2) => {
   let area1 = Math.PI * rad1 * rad1;
